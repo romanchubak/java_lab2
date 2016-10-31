@@ -1,4 +1,4 @@
-package lab1;
+﻿package lab1;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -17,7 +17,7 @@ public class main{
         Warehouse h1 = new Warehouse();
         h1.setProducts(P1,3);
         h1.setProducts(P2,2);
-
+	//sdfa
         System.out.println( h1.Remove_Product(P1));
         System.out.println("Done!!!");
     }
