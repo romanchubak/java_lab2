@@ -58,7 +58,6 @@ public class Warehouse
 
         return productsList;
     }
-
     public String Remove_Product(Product P)
     {
         String rez = "";
@@ -70,6 +69,32 @@ public class Warehouse
         else
             rez = "error!";
         return  rez;
+    }
+
+    public LinkedList<Product> PrintUnfitProducts()
+    {
+        LinkedList<Product> UnfitProducts = new LinkedList<Product>();
+        for(Map.Entry<Product, Integer> entry : Products.entrySet()) {
+            Product key = entry.getKey();
+            Integer value = entry.getValue();
+
+            if(  key.getDate_fitness().compareTo(key.getDate_of_manufacture()) < 0 )
+                UnfitProducts.add(key);
+        }
+        return UnfitProducts;
+    }
+
+    public String PrintUnfitProducts_String()
+    {
+        String UnfitProducts = "";
+        for(Map.Entry<Product, Integer> entry : Products.entrySet()) {
+            Product key = entry.getKey();
+            Integer value = entry.getValue();
+
+            if(  key.getDate_fitness().compareTo(key.getDate_of_manufacture()) < 0 )
+                UnfitProducts += key.getName();
+        }
+        return UnfitProducts;
     }
 
 }

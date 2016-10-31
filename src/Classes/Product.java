@@ -1,17 +1,35 @@
 package Classes;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Objects;
+import org.pojava.datetime.DateTime;
+import java.lang.Object;
+
 
 public class Product
 {
     private  Product_Category category;
     private  String name;
-    private  Calendar date_of_manufacture;
-    private  Calendar date_of_admission;
-    private  Calendar date_fitness;
+    private  DateTime date_of_manufacture; // DateTime:  http://www.pojava.org/site/pojava-datetime-3.0.0/apidocs/org/pojava/datetime/DateTime.html#DateTime(java.lang.String)
+    private  DateTime date_of_admission;
+    private  DateTime date_fitness;
 
-    public Product( Product_Category c, String n, Calendar Date_of_manufacture, Calendar Date_of_admission, Calendar Date_fitness)
+    public Product()
+    {
+        category = null;
+        name = "";
+        date_of_manufacture = new DateTime("2016/10/21T10:00:00Z");
+        date_of_admission =  new DateTime("2016/10/21T10:00:00Z");
+        date_fitness =  new DateTime("2016/10/21T10:00:00Z");
+    }
+
+    public  Product(String tname, Product_Category tcategory)
+    {
+        category = tcategory;
+        name = tname;
+        date_of_manufacture = new DateTime("2016/10/21T10:00:00Z");
+        date_of_admission =  new DateTime("2016/10/21T10:00:00Z");
+        date_fitness =  new DateTime("2016/10/21T10:00:00Z");
+    }
+
+    public Product( Product_Category c, String n, DateTime Date_of_manufacture, DateTime Date_of_admission, DateTime Date_fitness)
     {
         category = c;
         name = n;
@@ -36,25 +54,25 @@ public class Product
         this.name = Name;
     }
 
-    public void setDate_of_manufacture(Calendar date_of_manufacture) {
+    public void setDate_of_manufacture(DateTime date_of_manufacture) {
         this.date_of_manufacture = date_of_manufacture;
     }
-    public Calendar getDate_of_manufacture() {
+    public DateTime getDate_of_manufacture() {
 
         return date_of_manufacture;
     }
 
-    public Calendar getDate_of_admission() {
+    public DateTime getDate_of_admission() {
         return date_of_admission;
     }
-    public void setDate_of_admission(Calendar date_of_admission) {
+    public void setDate_of_admission(DateTime date_of_admission) {
         this.date_of_admission = date_of_admission;
     }
 
-    public Calendar getDate_fitness() {
+    public DateTime getDate_fitness() {
         return date_fitness;
     }
-    public void setDate_fitness(Calendar date_fitness) {
+    public void setDate_fitness(DateTime date_fitness) {
         this.date_fitness = date_fitness;
     }
 
