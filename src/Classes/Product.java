@@ -1,13 +1,7 @@
-package lab1;
+package Classes;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
-
-/**
- * Created by Роман on 27.09.2016.
- */
-
-enum Product_Category { DAIRY , MEAT, CEREALS ,ALCOHOL , BAKERY, FISH, GROCERY }
 
 public class Product
 {
