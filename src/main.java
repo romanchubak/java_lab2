@@ -22,9 +22,11 @@ public class main{
 
 
         IO io = new FileIO();
+        IO io1 = new JsonIO();
         String s = "test_file";
         io.WriteToFile(h1, s);
-        h2 = io.ReadFromFile(s);
+        io1.WriteToFile(h1, s);
+        h2 = io1.ReadFromFile(s);
         System.out.println( h2.toString());
         System.out.println("Done!!!");
     }

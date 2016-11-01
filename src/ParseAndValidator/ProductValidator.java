@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 /**
  * Created by romanchubak on 31.10.2016.
  */
-//http://www.quizful.net/post/Java-RegExp
+//http://www.quizful.net/post/Java-RegExpйй
 public class ProductValidator {
     private static String FULL_PATTERN = "^[A-Z]+\\s[A-Z][a-z]+\\s"+
                                          "20[1-9][0-9]-[01][012]-[0123][0-9]\\s[012][0-9]:[0-5][0-9]:[0-6][0-9]\\s"+

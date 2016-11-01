@@ -27,6 +27,12 @@ public class Warehouse
         Products = new HashMap<Product, Integer>();
     }
 
+    public Warehouse(com.Warehause W)
+    {
+        name = W.getName();
+        Products = W.getProducts();
+    }
+
     public Map getProducts()
     {
         return Products;
