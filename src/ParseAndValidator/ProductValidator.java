@@ -51,12 +51,12 @@ public class ProductValidator {
         String name = "";
         Pattern p = Pattern.compile(NAME_PATTERN);
         Matcher m = p.matcher(str);
-        if(m.find()) name = m.group();
+        if(m.find()) name = str.substring(m.start(), m.end()-1);
 
         Product_Category category = null;
         p = Pattern.compile(CATEGORY_PATTERN);
         m = p.matcher(str);
-        if(m.find()) category = Product_Category.valueOf(m.group());
+        if(m.find()) category = Product_Category.valueOf(str.substring(m.start(), m.end()-1));
 
         return new Product(name,category);
     }
