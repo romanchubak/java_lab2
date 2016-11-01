@@ -1,7 +1,7 @@
 package Classes;
 import org.pojava.datetime.DateTime;
 import java.lang.Object;
-
+import Exception.DateException;
 
 public class Product
 {
@@ -29,10 +29,10 @@ public class Product
         date_fitness =  new DateTime("2016/10/21T10:00:00Z");
     }
 
-    public Product( Product_Category c, String n, DateTime Date_of_manufacture, DateTime Date_of_admission, DateTime Date_fitness)
-    {
+    public Product( Product_Category c, String n, DateTime Date_of_manufacture, DateTime Date_of_admission, DateTime Date_fitness) throws DateException {
         category = c;
         name = n;
+        if(Date_of_manufacture.compareTo(Date_fitness)>0)  throw new DateException();
         date_of_manufacture = Date_of_manufacture;
         date_of_admission = Date_of_admission;
         date_fitness = Date_fitness;
