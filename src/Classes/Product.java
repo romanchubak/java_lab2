@@ -84,13 +84,11 @@ public class Product
 
     @Override
     public String toString() {
-        return "Product{" +
-                "category=" + category +
-                ", name='" + name + '\'' +
-                ", date_of_manufacture=" + date_of_manufacture +
-                ", date_of_admission=" + date_of_admission +
-                ", date_fitness=" + date_fitness +
-                '}';
+        return  ">>>Product: " + name +
+                "\n>>>Category: " + category +
+                "\n>>>Date of manufacture: " + date_of_manufacture +
+                "\n>>>Date of admission: " + date_of_admission +
+                "\n>>>Date fitness: " + date_fitness;
     }
 
     @Override

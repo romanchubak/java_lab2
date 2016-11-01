@@ -12,7 +12,20 @@ import java.util.Map;
  */
 public class Warehouse
 {
-    private Map<Product, Integer> Products = new HashMap<Product, Integer>();
+    private String name;
+
+    private Map<Product, Integer> Products ;
+
+    public Warehouse()
+    {
+        name = "Shop's";
+        Products = new HashMap<Product, Integer>();
+    }
+    public Warehouse(String Name)
+    {
+        name = Name;
+        Products = new HashMap<Product, Integer>();
+    }
 
     public Map getProducts()
     {
@@ -22,11 +35,25 @@ public class Warehouse
         Products.put(p,n);
     }
 
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
-        return "Warehouse{" +
-                "Products=" + Products +
-                '}';
+        String rez = ">Warehouse: " + name ;
+        for(Map.Entry<Product, Integer> entry : Products.entrySet()) {
+            Product key = entry.getKey();
+            Integer value = entry.getValue();
+
+            rez += "\n---------------------------------------------------------------\n" +
+                    ">>Product number: " + value + "\n" + key.toString();
+        }
+        return  rez;
     }
 
     public LinkedList<Product> PrintProductsListByCategory(Product_Category category)
