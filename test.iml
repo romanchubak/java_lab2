@@ -20,5 +20,6 @@
     </orderEntry>
     <orderEntry type="library" name="org.pojava:datetime:3.0.2" level="project" />
     <orderEntry type="library" name="org.codehaus.jackson:jackson-xc:1.9.13" level="project" />
+    <orderEntry type="library" name="com.google.code.gson:gson:2.7" level="project" />
   </component>
 </module>

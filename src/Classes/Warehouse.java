@@ -2,6 +2,18 @@ package Classes;
 
 
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+import com.sun.istack.internal.NotNull;
+
+
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.parsers.ParserConfigurationException;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Locale;
@@ -10,16 +22,25 @@ import java.util.Map;
 /**
  *  on 28.09.2016.
  */
+@XmlRootElement(name="Warehouse")
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Warehouse
 {
+    @XmlElement(name = "name")
+    @SerializedName("name")
+    @Expose
     private String name;
 
+    @XmlElement(name = "Products")
+    @SerializedName("Products")
+    @Expose
     private Map<Product, Integer> Products ;
 
     public Warehouse()
     {
-        name = "Shop's";
-        Products = new HashMap<Product, Integer>();
+        name = null;
+        Products = null;
     }
     public Warehouse(String Name)
     {
@@ -27,11 +48,6 @@ public class Warehouse
         Products = new HashMap<Product, Integer>();
     }
 
-    public Warehouse(com.Warehause W)
-    {
-        name = W.getName();
-        Products = W.getProducts();
-    }
 
     public Map getProducts()
     {

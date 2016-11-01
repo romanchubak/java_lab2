@@ -1,15 +1,15 @@
 >Warehouse: Abka
 ---------------------------------------------------------------
->>Product number: 3
->>>Product: Beer
->>>Category: ALCOHOL
->>>Date of manufacture: 2016-10-21 13:00:00
->>>Date of admission: 2016-10-21 13:00:00
->>>Date fitness: 2016-10-21 13:00:00
----------------------------------------------------------------
 >>Product number: 2
 >>>Product: Rom
 >>>Category: ALCOHOL
 >>>Date of manufacture: 2016-10-21 13:00:00
 >>>Date of admission: 2016-10-21 13:00:00
->>>Date fitness: 2016-10-21 13:00:00
+>>>Date fitness: 2016-10-21 10:00:00
+---------------------------------------------------------------
+>>Product number: 3
+>>>Product: Beer
+>>>Category: ALCOHOL
+>>>Date of manufacture: 2016-10-21 13:00:00
+>>>Date of admission: 2016-10-21 13:00:00
+>>>Date fitness: 2016-10-21 10:00:00

@@ -92,7 +92,7 @@ public class ProductValidator {
     public static void main(String... strings)
     {
 
-        String s = "ALCOHOL Beer 2016-10-21 13:00:00 2016-10-29 13:00:00 2016-10-01 12:00:00";
+        String s = "ALCOHOL Beer 2016-10-21 13:00:00 2016-10-29 13:00:00 2016-10-31 12:00:00";
 
         Product p;
 

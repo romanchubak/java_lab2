@@ -1,23 +1,25 @@
 package IO;
-import com.*;
 
-import java.io.File;
+import Classes.Warehouse;
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import org.codehaus.jackson.map.ObjectMapper;
 /**
- * Created by romanchubak on 01.11.2016.
+ * Created by romanchubak on 02.11.2016.
  */
-public class JsonIO implements IO {
+public class JsonIO  implements  IO {
 
     @Override
-    public void WriteToFile(Classes.Warehouse w_house, String fileName )
-    {
-        ObjectMapper mapper = new ObjectMapper();
-        File file = new File(fileName + ".json");
-        Warehause W = new Warehause(w_house);
-
-        try {
-            mapper.writeValue(file, W);
+    public void WriteToFile(Warehouse w_house, String fileName) {
+        try  {
+            FileWriter file = new FileWriter(fileName + ".json");
+            file.write(new Gson().toJsonTree(w_house).toString());
+            file.flush();
+            file.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -25,19 +27,13 @@ public class JsonIO implements IO {
     }
 
     @Override
-    public Classes.Warehouse ReadFromFile(String fileName)
-    {
-
-            ObjectMapper mapper = new ObjectMapper();
-            File file = new File(fileName + ".json");
-            Warehause W = new Warehause();
-
-            try {
-                W = mapper.readValue(file, Warehause.class);
-            } catch (IOException e) {
-
-                e.printStackTrace();
-            }
-            return new Classes.Warehouse(W);
+    public Warehouse ReadFromFile(String fileName) {
+        try {
+            return new Gson()
+                    .fromJson(new JsonParser().parse(new FileReader(fileName + ".json")), Warehouse.class);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
