@@ -1,4 +1,4 @@
-package Classes;
+package Entity;
 
 /**
  * Created by Роман on 27.09.2016.

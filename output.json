@@ -1,0 +1,21 @@
+{
+  "name": "Abka",
+  "Products": [
+    {
+      "category": "ALCOHOL",
+      "name": "Beer",
+      "date_of_manufacture": "2016/10/21T10:00:00Z",
+      "date_of_admission": "2016/10/21T10:00:00Z",
+      "date_fitness": "2016/10/21T10:00:00Z)",
+      "count": 4
+    },
+    {
+      "category": "ALCOHOL",
+      "name": "Rom",
+      "date_of_manufacture": "2016/10/21T10:00:00Z",
+      "date_of_admission": "2016/10/21T10:00:00Z",
+      "date_fitness": "2016/10/21T10:00:00Z)",
+      "count": 4
+    }
+  ]
+}

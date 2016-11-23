@@ -1,15 +1,1 @@
->Warehouse: Abka
----------------------------------------------------------------
->>Product number: 2
->>>Product: Rom
->>>Category: ALCOHOL
->>>Date of manufacture: 2016-10-21 13:00:00
->>>Date of admission: 2016-10-21 13:00:00
->>>Date fitness: 2016-10-21 10:00:00
----------------------------------------------------------------
->>Product number: 3
->>>Product: Beer
->>>Category: ALCOHOL
->>>Date of manufacture: 2016-10-21 13:00:00
->>>Date of admission: 2016-10-21 13:00:00
->>>Date fitness: 2016-10-21 10:00:00
+{"name":"Abka","Products":[{"category":"ALCOHOL","name":"Beer","date_of_manufacture":"2016/10/21T10:00:00Z","date_of_admission":"2016/10/21T10:00:00Z","date_fitness":"2016/10/21T10:00:00Z)","count":4},{"category":"ALCOHOL","name":"Rom","date_of_manufacture":"2016/10/21T10:00:00Z","date_of_admission":"2016/10/21T10:00:00Z","date_fitness":"2016/10/21T10:00:00Z)","count":4}]}

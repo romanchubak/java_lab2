@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Warehouse>
+    <name>Abka</name>
+    <products>
+        <category>ALCOHOL</category>
+        <name>Beer</name>
+        <date_of_manufacture>2016/10/21T10:00:00Z</date_of_manufacture>
+        <date_of_admission>2016/10/21T10:00:00Z</date_of_admission>
+        <date_fitness>2016/10/21T10:00:00Z)</date_fitness>
+        <count>4</count>
+    </products>
+    <products>
+        <category>ALCOHOL</category>
+        <name>Rom</name>
+        <date_of_manufacture>2016/10/21T10:00:00Z</date_of_manufacture>
+        <date_of_admission>2016/10/21T10:00:00Z</date_of_admission>
+        <date_fitness>2016/10/21T10:00:00Z)</date_fitness>
+        <count>4</count>
+    </products>
+</Warehouse>

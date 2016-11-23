@@ -1,7 +1,7 @@
 package ParseAndValidator;
 
-import Classes.Product;
-import Classes.Product_Category;
+import Entity.Product;
+import Entity.Product_Category;
 import Exception.DateException;
 import com.sun.istack.internal.NotNull;
 import org.pojava.datetime.DateTime;
@@ -58,7 +58,7 @@ public class ProductValidator {
         m = p.matcher(str);
         if(m.find()) category = Product_Category.valueOf(str.substring(m.start(), m.end()-1));
 
-        return new Product(name,category);
+        return new Product(name,category, 4);
     }
 
     private static Product ParseFullProduct(@NotNull String str) throws DateException
@@ -80,7 +80,13 @@ public class ProductValidator {
         while (m.find()) date[i++] = new DateTime(m.group());
         if(!DateValidator(date[0],date[2])) throw new DateException();
 
-        return new Product(category,name,date[0],date[1],date[2]);
+        try {
+            return new Product(category,name,date[0],date[1],date[2], 3);
+        } catch (DateException dateException) {
+            dateException.printStackTrace();
+        }
+
+        return null;
     }
 
     private static boolean DateValidator(@NotNull DateTime dateTime1,@NotNull DateTime dateTime2)
