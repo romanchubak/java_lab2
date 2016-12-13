@@ -23,6 +23,11 @@ public class Warehouse {
     @SerializedName("name")
     private String name;
 
+    @XmlElement(name = "id")
+    @SerializedName("id")
+    private int id;
+
+
     @XmlElement(name = "products")
     @SerializedName("products")
     private Collection<Product> products;
@@ -30,14 +35,23 @@ public class Warehouse {
     public Warehouse() {
         name = null;
         products = new LinkedList<>();
+        id = System.identityHashCode(this);
     }
 
     public Warehouse(String Name) {
         name = Name;
         products = new LinkedList<>();
+        id = System.identityHashCode(this);
     }
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public Collection<Product> getProducts() {
         return products;
     }
