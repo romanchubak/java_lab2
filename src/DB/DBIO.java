@@ -161,7 +161,33 @@ public class DBIO {
         }
         return list;
     }
+    public List<Product> getProducts() {
 
+        Connection connection = ConnectionManager.getConnection();
+        List<Product> list = new ArrayList<>();
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM product;";
+            ResultSet rs = statement.executeQuery(query);
+            Product product = null;
+            while (rs.next()) {
+                //Name, Category, Quantity, Date_of_manufacture, Dateof_admission, Date_fitness, Warehouse_id
+                String Name = rs.getString("Name");
+                String Category = rs.getString("Category");
+                Integer Quantity = rs.getInt("Quantity");
+                DateTime Date_of_manufacture = new DateTime(rs.getDate("Date_of_manufacture").toString());
+                DateTime Dateof_admission = new DateTime(rs.getDate("Dateof_admission").toString());
+                DateTime Date_fitness = new DateTime(rs.getDate("Date_fitness").toString());
+                product = new Product(Product_Category.valueOf(Category),Name,Date_of_manufacture,Dateof_admission,Date_fitness,Quantity);
+                list.add(product);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (DateException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
     public  void addWarehouse(Warehouse warehouse){
         Connection connection = ConnectionManager.getConnection();
