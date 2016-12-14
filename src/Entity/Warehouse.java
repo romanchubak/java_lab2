@@ -43,6 +43,11 @@ public class Warehouse {
         products = new LinkedList<>();
         id = System.identityHashCode(this);
     }
+    public Warehouse(String Name, Collection<Product> collection,Integer ID) {
+        name = Name;
+        products = collection;
+        id = ID;
+    }
 
 
     public int getId() {
